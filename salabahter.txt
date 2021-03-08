@@ -1,0 +1,135 @@
+admin username: admin-ivan
+admin password: pass
+
+
+
+Editable tittle preko admina promjenit naslov stranice ili nes
+symfony ruta unutar controllera - get/post unutar nje se phpom kreira dokument
+CRUD rute za dokumente
+R - dohvati sve dokumente i ispisi neki podatak s njih
+
+
+add some property and get docs with that property
+objects
+vacation sustav kopiraj
+
+classes:
+    User
+    VacationRequest
+    
+
+
+
+
+pitanja:
+
+    - boolean select data type - ne mogu staviti default value?
+    - users? postoje neki ugradeni u pimcore (admin user), sto s njima, kako handlat druge usere
+    - The block data basically just gets serialized into a single database column. As a consequence,
+      this container type is not suitable, if you are planning to query the data.
+
+
+    - Zasto su negdje "undefined function" u kodu koje je generirao pimcore
+        (TestClass.php line110)
+
+    - Zasto u kodu mogu postaviti slider na bilo koju vrijednost, iako je u 
+        pimcore backendu postavljen min i max value?
+    - visible in grid view - gdje je grid view?
+    - Zasto nema one-to-one relationship data typea?
+    - Kako se rade forme, kao symfony - form type?
+
+
+    relacije
+    pogledaj si localization i kako uvest neki jezik
+    filtriranje relacija
+    block, field collection, localized fields
+    dohvacati localized fields, filtrirati po njima
+    export/import klasa (bulk takoder)
+    SERVICE vazna klasa - kreiranje foldera, kreiranje keya
+
+
+
+    filtriranje relacija
+
+
+
+pitanja:
+    - advanced many to many
+
+
+
+Today:
+    Field collections and blocks pogledaj u bazu - slicno blocku, drugacije skroz u bazi se handla
+    i da se queryat - pogledaj to u bazi i sve detaljnije
+    dinamicko dodavanje opcija kroz kod - dino ti napisao zadatak na slack :
+
+    Kreiraj klasu Configuration
+    Configuration ima block SelectOptions koji ima fieldove Key (input), Value (input)
+    napravi options provider koji ce u test klasi popunit Select field opcije koristeci block iz Configuration objecta
+    website setting dodas key WebsiteConfiguration i tu povezes svoj konfig object
+    listener koji onemogguci kreiranje vise Configuration objekata
+    
+    Assets - forma za dodavanje asseta
+           - thumbnails
+           - webdav access i restrict
+
+
+Today
+    php templating
+    editables : pogotovo renderlet, areablock, popunit brickovima areablock
+    kreiraj ovo gore nabrojano
+
+
+action metoda unutar bricka
+
+
+napravi product class (slika, ime, cijena)
+brick - productListBrick - 
+    - edit mode: folder (koji sadrzi produkte) dropaj te foldere tu
+    - preview mode: prikazati sve produkte iz tih foldera
+frontend samo ispisi to
+
+
+
+prouci n+1 problem detaljnije (uz lazy loading)
+
+dohvati djecu zajedno sa folderima (listing)
+
+today:
+
+    navigation (ubaci translation ovdje)
+    event - listener koji onemogguci kreiranje vise Configuration objekata
+    citaj e-commerce framework pa cemo napravit neki weshop
+
+
+klasa order inputi:broj, i drugi ce se sam spremit (taj broj / 5)
+svaki novi order ce imat key po nekom pravilu (00001, 00002 ...)
+
+
+kako se povezuje da dokument ima svoju prevedenu verziju
+
+
+pitanja
+    subdomains - http://subdomain.loc/ => page not found
+
+SITES
+ kopija homea
+ ako si na poddomeni makni pimcore logo i search i te 4 ikonice
+ site koristi isti controller i istu akciju
+
+ mailovi:
+ ruta "sendProductEmail"
+ ti trebas rutu za renderiranje
+ editable link (nek vodi bilokud, ugl admin to moze mijenjat)
+
+ '/send-product-email/{productId}
+ dinamcki dohvatit product po idu, i posalji name i price
+ dohvati trenutnog logiranog user i posalji njegovo ime i prezime u mail, i posalji mail na njegov email
+ i dodaj link (editable) na email document koji admin moze promjeniti kad pozeli
+
+ kako slati translatable mailove
+
+ today
+    prouci customer management framework (savjet je proc readme na gitu)
+    install skeleton verziju
+    implementacija logina

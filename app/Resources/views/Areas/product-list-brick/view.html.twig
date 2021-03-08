@@ -1,0 +1,25 @@
+
+{% if editmode %}
+
+	{{ pimcore_relations('folders', {
+		'types': ['object'],
+		'subtypes': {
+			'object': ['folder']
+		}
+	}) }}
+
+{% else %}
+
+	{% for key, folder in info.final %}
+
+		<h2> {{ key }} </h2>
+
+		{% for product in folder %}
+			<p> Name: {{ product.getName() }} </p>
+			<p> Price: {{ product.getPrice() }} </p>
+			<img src="{{ product.getProductImage().getThumbnail('myImageThumbnail') }}"></img>
+		{% endfor %}
+		
+	{% endfor %}
+
+{% endif %}

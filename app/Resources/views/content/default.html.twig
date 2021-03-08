@@ -1,0 +1,23 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+    <div id="main-content" class="main-content" >
+        {% if document.getTitle() is empty %}
+            {% do pimcore_head_title(pimcore_input('headline').getData(), 'PREPEND') %}
+        {% endif %}
+
+        <div class="page-header">
+            <h1>{{ pimcore_input('headline', {'placeholder':'Headline'}) }}</h1>
+        </div>
+
+       
+
+       {{ pimcore_areablock('myAreaBlock', {
+           'allowed': ['product-list-brick']
+       }) }}
+
+
+      
+
+    </div>
+{% endblock %}
